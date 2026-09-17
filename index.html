@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>핑크 뽀모도로 타이머</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="pomodoro-container">
+        <h1>🌸 뽀모도로 타이머 🌸</h1>
+        
+        <!-- 테마 컬러 선택 버튼 -->
+        <div class="theme-selector">
+            <button class="theme-btn" data-theme="pink" style="background-color: #ffb7b2;"></button>
+            <button class="theme-btn" data-theme="lavender" style="background-color: #dcd0ff;"></button>
+            <button class="theme-btn" data-theme="peach" style="background-color: #ffccbc;"></button>
+        </div>
+
+        <!-- 모드 선택 버튼 -->
+        <div class="modes">
+            <button class="mode-btn active" data-time="1500">집중</button>
+            <button class="mode-btn" data-time="300">짧은 휴식</button>
+            <button class="mode-btn" data-time="900">긴 휴식</button>
+        </div>
+
+        <!-- 타이머 디스플레이 -->
+        <div class="timer-display">
+            <span id="minutes">25</span>:<span id="seconds">00</span>
+        </div>
+
+        <!-- 제어 버튼 -->
+        <div class="controls">
+            <button id="start-btn" class="control-btn">시작</button>
+            <button id="reset-btn" class="control-btn">초기화</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

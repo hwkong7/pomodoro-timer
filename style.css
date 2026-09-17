@@ -1,0 +1,156 @@
+/* 기본 테마 (핑크) 변수 설정 */
+:root {
+    --bg-color: #fff0f3;
+    --card-bg: #ffffff;
+    --text-color: #594a4e;
+    --primary-color: #ff85a1;
+    --primary-hover: #ff6b8b;
+    --btn-text: #ffffff;
+    --shadow: rgba(255, 133, 161, 0.2);
+}
+
+/* 라벤더 테마 */
+body.theme-lavender {
+    --bg-color: #f3f0ff;
+    --primary-color: #b19cd9;
+    --primary-hover: #9d85cb;
+    --shadow: rgba(177, 156, 217, 0.2);
+}
+
+/* 피치 테마 */
+body.theme-peach {
+    --bg-color: #fff5ee;
+    --primary-color: #ffab91;
+    --primary-hover: #ff8a65;
+    --shadow: rgba(255, 171, 145, 0.2);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.3s ease;
+}
+
+.pomodoro-container {
+    background-color: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px var(--shadow);
+    text-align: center;
+    width: 380px;
+    transition: all 0.3s ease;
+}
+
+h1 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: var(--primary-hover);
+}
+
+/* 테마 선택기 스타일 */
+.theme-selector {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.theme-btn {
+    width: 25px;
+    height: 25px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.theme-btn:hover {
+    transform: scale(1.2);
+}
+
+.modes {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--bg-color);
+    padding: 6px;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+.mode-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    padding: 10px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    flex: 1;
+    opacity: 0.7;
+}
+
+.mode-btn.active {
+    background-color: var(--primary-color);
+    color: var(--btn-text);
+    opacity: 1;
+    box-shadow: 0 4px 10px var(--shadow);
+}
+
+.timer-display {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+    color: var(--text-color);
+}
+
+.controls {
+    display: flex;
+    gap: 12px;
+}
+
+.control-btn {
+    flex: 1;
+    background-color: var(--primary-color);
+    color: var(--btn-text);
+    border: none;
+    padding: 14px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+.control-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.control-btn:active {
+    transform: scale(0.97);
+}
+
+#reset-btn {
+    background-color: #e0e0e0;
+    color: #666;
+    box-shadow: none;
+}
+
+#reset-btn:hover {
+    background-color: #d0d0d0;
+}
