@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pomodoro-cache-v2';
+const CACHE_NAME = 'pomodoro-cache-v3';
 const ASSETS = [
     './',
     './index.html',
@@ -6,6 +6,8 @@ const ASSETS = [
     './script.js',
     './manifest.json',
     './icon.svg',
+    './icon-192.png',
+    './icon-512.png',
 ];
 
 self.addEventListener('install', (event) => {
