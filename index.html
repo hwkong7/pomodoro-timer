@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>핑크 뽀모도로 타이머</title>
+    <meta name="theme-color" content="#ff85a1">
+    <title>뽀모도로 타이머</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icon.svg" type="image/svg+xml">
 </head>
 <body>
     <div class="pomodoro-container">
-        <h1>🌸 뽀모도로 타이머 🌸</h1>
-        
+        <div class="top-bar">
+            <h1>뽀모도로 타이머</h1>
+            <button id="settings-btn" class="icon-btn" aria-label="설정 열기" aria-expanded="false">⋮</button>
+        </div>
+
         <!-- 테마 컬러 선택 버튼 -->
         <div class="theme-selector">
             <button class="theme-btn" data-theme="pink" style="background-color: #ffb7b2;"></button>
@@ -19,14 +25,19 @@
 
         <!-- 모드 선택 버튼 -->
         <div class="modes">
-            <button class="mode-btn active" data-time="1500">집중</button>
-            <button class="mode-btn" data-time="300">짧은 휴식</button>
-            <button class="mode-btn" data-time="900">긴 휴식</button>
+            <button class="mode-btn active" data-mode="focus" data-time="1500">집중</button>
+            <button class="mode-btn" data-mode="short" data-time="300">짧은 휴식</button>
+            <button class="mode-btn" data-mode="long" data-time="900">긴 휴식</button>
         </div>
 
         <!-- 타이머 디스플레이 -->
         <div class="timer-display">
             <span id="minutes">25</span>:<span id="seconds">00</span>
+        </div>
+
+        <!-- 뽀모도로 완료 횟수 -->
+        <div class="cycle-counter">
+            완료한 집중 세션: <span id="cycle-count">0</span>개
         </div>
 
         <!-- 제어 버튼 -->
@@ -36,6 +47,37 @@
         </div>
     </div>
 
-    <script src="scripts.js"></script>
+    <!-- 설정 팝업 -->
+    <div id="settings-overlay" class="settings-overlay" hidden>
+        <div class="settings-modal" role="dialog" aria-modal="true" aria-labelledby="settings-title">
+            <div class="settings-modal-header">
+                <h2 id="settings-title">설정</h2>
+                <button id="settings-close-btn" class="close-btn" aria-label="설정 닫기">✕</button>
+            </div>
+
+            <!-- 커스텀 시간 설정 -->
+            <div class="settings-section">
+                <p class="settings-label">집중/휴식 시간 직접 설정</p>
+                <div class="custom-time">
+                    <input type="number" id="custom-minutes" min="1" max="180" placeholder="분 단위로 입력">
+                    <button id="custom-set-btn" class="text-btn">적용</button>
+                </div>
+            </div>
+
+            <!-- 알림 토글 -->
+            <div class="settings-section toggle-row">
+                <div>
+                    <p class="settings-label">데스크톱 알림</p>
+                    <p class="settings-desc">타이머가 끝나면 알림을 보내드려요</p>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="notify-toggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
